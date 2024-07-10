@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" id="age" placeholder="Enter Your age" />
+      <button type="submit" id="btn">Click Here</button>
+      <p id="display">Display Result</p>
+    </form>
+
+    <script>
+      let form = document.getElementById("myForm");
+      let btn = document.getElementById("btn");
+      let result = document.getElementById("display");
+
+      form.addEventListener("submit", displayData);
+
+      function displayData(event) {
+        event.preventDefault();
+        let userAge = document.getElementById("age").value;
+
+        if (userAge < 18) {
+          result.innerText = "You cant drive";
+          // console.log("Adult");
+        } 
+        else if(userAge==18){
+        result.innerText = "You are just eligible to drive";
+        }
+        else {
+          result.innerText = "You are  eligible to drive";
+
+          // console.log("Minor");
+        }
+      }
+    </script>
+  </body>
+</html>
